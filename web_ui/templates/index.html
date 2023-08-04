@@ -1,0 +1,38 @@
+<!-- Contents of index.html (Web UI for viewing reservations) -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Laundry Room Reservations</title>
+</head>
+
+<body>
+    <h1>Laundry Room Reservations</h1>
+    <table>
+        <tr>
+            <th>Date</th>
+            <th>Time</th>
+            <th>User</th>
+            <th>Room Number</th>
+            <th>Phone Number</th>
+            <th>Notification Preference</th>
+            <th>Action</th>
+        </tr>
+        {% for reservation in reservations %}
+        <tr>
+            <td>{{ reservation.date }}</td>
+            <td>{{ reservation.time }}</td>
+            <td>{{ reservation.user.room_number }}</td>
+            <td>{{ reservation.user.room_number }}</td>
+            <td>{{ reservation.user.phone_number }}</td>
+            <td>{{ reservation.notification_preference }} minutes before ⏰</td>
+            <td>
+                <a href="/edit/{{ reservation.id }}">Edit</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+
+</html>

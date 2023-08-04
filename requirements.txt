@@ -1,0 +1,5 @@
+python-telegram-bot==13.7
+flask
+flask_sqlalchemy
+apscheduler
+python-dotenv

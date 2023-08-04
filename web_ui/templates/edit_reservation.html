@@ -1,0 +1,28 @@
+<!-- Contents of edit_reservation.html (Web UI for editing reservations) -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Edit Reservation</title>
+</head>
+
+<body>
+    <h1>Edit Reservation</h1>
+    <form method="post" action="">
+        <input type="hidden" name="reservation_id" value="{{ reservation.id }}">
+        <label for="date">Date:</label>
+        <input type="text" id="date" name="date" value="{{ reservation.date }}" required><br>
+        <label for="time">Time:</label>
+        <input type="text" id="time" name="time" value="{{ reservation.time }}" required><br>
+        <label for="notification_preference">Notification Preference:</label>
+        <select id="notification_preference" name="notification_preference" required>
+            <option value="0" {% if reservation.notification_preference==0 %}selected{% endif %}>On time ⏰</option>
+            <option value="15" {% if reservation.notification_preference==15 %}selected{% endif %}>15 minutes before ⏰
+            </option>
+        </select><br>
+        <input type="submit" value="Save">
+    </form>
+</body>
+
+</html>
